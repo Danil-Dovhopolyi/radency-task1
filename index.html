@@ -11,13 +11,13 @@
 <body>
   <div class="wrapper">
     <table id="notesTable" class="notesTable">
-      <!-- The header and record rows for active notes will be added dynamically -->
     </table>
-    <!-- "Create Record" button -->
-    <button type="button" id="createRecordBtn">Create Record</button>
-    <h2>Summary</h2>
+    <div class="between">
+      <button type="button" id="createRecordBtn" class="createRecordBtn">Create Record</button>
+      <h2 class="summaryTitle">Summary</h2>
+    </div>
+
     <table id="summaryTable" class="summaryTable">
-      <!-- The header and record rows for the summary will be added dynamically -->
       <tr class="summaryTable__header">
         <th>Category</th>
         <th>Active</th>
@@ -26,7 +26,6 @@
     </table>
 
 
-    <!-- Form for creating a new record -->
     <div id="noteDialog" class="noteDialog">
       <h2>Create New Note</h2>
       <form id="createNoteForm">
@@ -43,7 +42,6 @@
       </form>
     </div>
 
-    <!-- Form for editing a record (initially hidden) -->
     <div id="editNoteDialog" class="noteDialog" style="display: none;">
       <h2>Edit Note</h2>
       <form id="editNoteForm">
@@ -61,22 +59,7 @@
       </form>
     </div>
 
-    <!-- New button and form for creating a record in the table -->
-    <form id="createFormTable" style="display: none;">
-      <label for="noteContentTable">Note Content:</label>
-      <textarea id="noteContentTable" required></textarea>
-      <label for="noteCategoryTable">Category:</label>
-      <select id="noteCategoryTable" required>
-        <option value="Task">Task</option>
-        <option value="Random Thought">Random Thought</option>
-        <option value="Idea">Idea</option>
-      </select>
-      <button type="button" id="saveRecordTableBtn">Save</button>
-      <button type="button" id="cancelRecordTableBtn">Cancel</button>
-    </form>
-  </div>
-
-  <script src="main.js" type="module"></script>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
