@@ -1,13 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.scss">
+  <title>Task 1</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <table id="notesTable" class="notesTable">
+      <!-- The header and record rows for active notes will be added dynamically -->
+    </table>
+    <!-- "Create Record" button -->
+    <button type="button" id="createRecordBtn">Create Record</button>
+    <h2>Summary</h2>
+    <table id="summaryTable" class="summaryTable">
+      <!-- The header and record rows for the summary will be added dynamically -->
+      <tr class="summaryTable__header">
+        <th>Category</th>
+        <th>Active</th>
+        <th>Archived</th>
+      </tr>
+    </table>
+
+
+    <!-- Form for creating a new record -->
+    <div id="noteDialog" class="noteDialog">
+      <h2>Create New Note</h2>
+      <form id="createNoteForm">
+        <label for="noteContent">Note Content:</label>
+        <textarea id="noteContent" required></textarea>
+        <label for="noteCategory">Category:</label>
+        <select id="noteCategory" required>
+          <option value="Task">Task</option>
+          <option value="Random Thought">Random Thought</option>
+          <option value="Idea">Idea</option>
+        </select>
+        <button type="button" id="saveNoteBtn">Save</button>
+        <button type="button" id="cancelNoteBtn">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Form for editing a record (initially hidden) -->
+    <div id="editNoteDialog" class="noteDialog" style="display: none;">
+      <h2>Edit Note</h2>
+      <form id="editNoteForm">
+        <input type="hidden" id="editNoteId">
+        <label for="editNoteContent">Note Content:</label>
+        <textarea id="editNoteContent" required></textarea>
+        <label for="editNoteCategory">Category:</label>
+        <select id="editNoteCategory" required>
+          <option value="Task">Task</option>
+          <option value="Random Thought">Random Thought</option>
+          <option value="Idea">Idea</option>
+        </select>
+        <button type="button" id="saveEditNoteBtn">Save</button>
+        <button type="button" id="cancelEditNoteBtn">Cancel</button>
+      </form>
+    </div>
+
+    <!-- New button and form for creating a record in the table -->
+    <form id="createFormTable" style="display: none;">
+      <label for="noteContentTable">Note Content:</label>
+      <textarea id="noteContentTable" required></textarea>
+      <label for="noteCategoryTable">Category:</label>
+      <select id="noteCategoryTable" required>
+        <option value="Task">Task</option>
+        <option value="Random Thought">Random Thought</option>
+        <option value="Idea">Idea</option>
+      </select>
+      <button type="button" id="saveRecordTableBtn">Save</button>
+      <button type="button" id="cancelRecordTableBtn">Cancel</button>
+    </form>
+  </div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
