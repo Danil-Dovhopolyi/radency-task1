@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+.wrapper {
+  width: 100%;
+  height: 60%;
+}
+.notesTable {
+  width: 100%;
+  height: 100%;
+  border-collapse: separate;
+  padding: 2%;
+  &__header {
+    height: 15%;
+    background-color: gray;
+    border-collapse: collapse;
+  }
+  &__record {
+    background-color: gainsboro;
+    margin: 1%;
+    text-align: center;
+  }
+  &__button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__button img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.summaryTable {
+  width: 100%;
+  height: 50%;
+  border-collapse: separate;
+  padding: 2%;
+  &__header {
+    height: 15%;
+    background-color: gray;
+    border-collapse: collapse;
+  }
+  &__record {
+    background-color: gainsboro;
+    margin: 1%;
+    text-align: center;
+  }
+}
+.between {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.noteDialog {
+  display: none;
+}
+
+.createRecordBtn {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 0.5%;
+  border-radius: 8px;
+  float: right;
+}
