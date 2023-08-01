@@ -13,9 +13,19 @@ import {
 let notes = getNotes();
 
 function displayNotes() {
+  notes = notes.map((note) => ({
+    ...note,
+    datesMentioned: extractDatesFromNoteContent(note.content),
+  }));
+
   renderNotesTable(notes);
   renderCategoriesSummary(updateCategoriesSummary(notes));
   attachEventListeners();
+}
+export function extractDatesFromNoteContent(content) {
+  const dateRegex = /\b\d{1,2}\/\d{1,2}\/\d{4}\b/g;
+  const dates = content.match(dateRegex) || [];
+  return dates.join(', ');
 }
 
 export function openEditNoteForm(noteId) {

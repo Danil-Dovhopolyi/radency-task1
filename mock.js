@@ -2,7 +2,8 @@ let notes = [
   {
     id: 1,
     createdAt: new Date('2023-07-29T08:00:00'),
-    content: "First note. Today's date.",
+    content:
+      'I’m gonna have a dentist appointment on the 3/5/2021, I moved it from 5/5/2021” ',
     category: 'Task',
     archived: false,
   },
